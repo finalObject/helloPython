@@ -1,0 +1,11 @@
+r'sadsfda'  //do not need '\'
+
+u'sasdsad'  //Unicode
+
+'''asdsd
+adsadas
+asddsad
+sadasd'''   //several lines
+
+
+
