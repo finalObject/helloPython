@@ -1,11 +1,5 @@
-r'sadsfda'  //do not need '\'
-
-u'sasdsad'  //Unicode
-
-'''asdsd
-adsadas
-asddsad
-sadasd'''   //several lines
-
-
-
+# 布尔值 True False
+# and or not可以当逻辑运算符
+# 空值为none，不是0
+# 弱类型语言，不同类型之间可以赋值，但是后果自负
+# 转义字符正常使用	
