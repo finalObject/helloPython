@@ -1,6 +1,6 @@
 # 布尔值 True False
 # and or not可以当逻辑运算符
-# 空值为none，不是0
+# 空值为None，不是0
 # 弱类型语言，不同类型之间可以赋值，但是后果自负，不需要申明类型
 # 转义字符正常使用
 # 支持Unicode
@@ -41,3 +41,27 @@ while x < N:
 print("Out of loop")
 
 # break&continue 照常
+
+# dict 字典，键值对，无序，keyo必须不可变
+d = {
+    'Adam':95,
+    'Lisa':85
+}
+len(d) # length of d
+if 'Adam' in d: # 判断是否在集合中
+    d['Adam'] # 下标访问
+# 另外一种访问方法
+d.get('Adam') # 访问失败返回None
+#dict和list相比占内存，查询速度快，查询时间不随尺寸增长而增长
+d['NewGuy']=70 # 直接添加新元素，已有的话就替换
+for a in d:
+    print(a,d[a])
+
+# set 集合，无序，不重复
+set1 = set(['A','B','C']) # 遇到重复元素自动去掉
+# 遍历和判断存在于dict相同
+# 储存的元素必须是不变的
+set1.add()
+set1.remove()
+
+# function!!
