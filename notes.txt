@@ -1,5 +1,43 @@
 # 布尔值 True False
 # and or not可以当逻辑运算符
 # 空值为none，不是0
-# 弱类型语言，不同类型之间可以赋值，但是后果自负
-# 转义字符正常使用	
+# 弱类型语言，不同类型之间可以赋值，但是后果自负，不需要申明类型
+# 转义字符正常使用
+# 支持Unicode
+# 整数小数运算上不用考虑类型了，自己会换算，该小数小数！很好的特性
+# 逻辑运算会短路
+# list，我觉得是链表，允许不同类型，下标访问
+listA = ['Michael','Bob',12]
+listB = []
+print listA[0]
+print listA[-1] # 自行感受
+listA.append("Sweetie")
+listA.insert(0,"Paul")
+listA.pop(1) # 移除并返回该元素，没有参数移除最后一个
+
+# tuple 类似于list，但是是常量，创建后无法改变，下标访问，无法赋值
+tupleA = ('Michael','Bob',12)
+tupleB = (1,) # 单个元素的tuple的申明方式
+# tuple如果其中一个元素是list，就可以可变！因为list可变
+
+# if,没有结束符号，注意锁进
+if flag==True:
+    print("true")
+elif flag==False:
+    print("false")
+else:
+    print("else~")
+print("Out of loop")
+
+# for in
+L = ['Ada','Bob','Candy']
+for name in L:
+    print("name is",name)
+print("Out of loop")
+
+# while
+while x < N:
+    x = x+1
+print("Out of loop")
+
+# break&continue 照常
