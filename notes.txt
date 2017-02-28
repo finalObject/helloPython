@@ -100,3 +100,8 @@ dict.items() # 将dict转换为包含tuple的list
 [m+n for m in 'ABC' for n in '123']
 
 '<tr><td>%s</td><td>%s</td></tr>' %(name,score) #生成字符串
+
+a=abs # 函数作为变量使用
+a(-1)
+
+#高阶函数：吧函数作为参数接受的函数
