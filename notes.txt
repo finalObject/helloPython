@@ -65,3 +65,38 @@ set1.add()
 set1.remove()
 
 # function!!
+def fun1(x): # 返回多值，其实就是返回一个tuple
+    return x+1,x+2
+result1,result2=fun1(2)
+
+def fun2(x,y=2): # 只有一个参数的话默认等于2
+    return x+y
+def fun3(*x): # 输入可变数量的参数，其实就是输入了一个tuple
+    return x
+# 导入包
+import math
+math.cos(1)
+
+range(3) # 获得range(0,3)，相当于一个012的数组
+
+L=[1,2,3,4]
+L[0:2] #和matlab差不多诶,前闭后开
+L[:] # 所有元素
+L[statIndex:endIndex:2] # 每隔两个元素取出
+# 切片操作也支持负数
+
+for i in range(1,100,2): # 完成c中for形式
+    print(i)
+
+a=['A','B','C']
+b=enumerate(a) # b类似[(0,'A'),(1,'B'),(2,'C')]，但是不能用索引访问
+# enumerate这个函数吧对应的元素变成了索引和值组成而成的tutple
+# 可以用这个函数在迭代中获取索引
+# dict迭代可以得到key，要获得value的话，可以对dict.values()或dict.itervalues()迭代
+
+dict.items() # 将dict转换为包含tuple的list
+
+[x * x for x in range(1,11) if x%2==0] # 哇塞自行感受
+[m+n for m in 'ABC' for n in '123']
+
+'<tr><td>%s</td><td>%s</td></tr>' %(name,score) #生成字符串
