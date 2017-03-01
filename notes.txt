@@ -101,7 +101,82 @@ dict.items() # 将dict转换为包含tuple的list
 
 '<tr><td>%s</td><td>%s</td></tr>' %(name,score) #生成字符串
 
+# 函数定义可以放在所有位置
 a=abs # 函数作为变量使用
 a(-1)
 
 #高阶函数：吧函数作为参数接受的函数
+def fun4(x):
+    return x*x
+a=[1,2,3]
+b=map(fun4,a) # 将一个函数作用于list中所用的元素，返回一个新的list
+# b = [1,4,9]
+
+reduce(f,list,a) # f接受两个参数返回一个参数(有a的话，先是a和一号元素开始运算)，list中12元素调用函数，然后返回参数和3号元素调用函数，直到结束
+
+filter(f,list) # 过滤，f接受一个参数返回True or False，所有True的元素作为list返回
+
+sored(list,f) # 排序函数，不输入f的话默认是升序，f函数是有两个参数xy，x应该排在前面返回-1，后面返回1，相等返回0
+
+# 函数返回函数参数，实现延迟调用，感觉不实用
+
+# 匿名函数 lambda,没有return，然后冒号后面只有一个表达式表示return结果
+map(lambda x,y:x*y,[1,2,3,4])
+lambda x: -1 if x<0 else x # 匿名函数里if-else好像有点不一样
+
+# decorator
+def fun1(x):
+    return x*2
+ndef newFun1(f): # 调用newFun1(fun1)返回的函数时，会答应fun1的名字，同时执行fun1
+    def fn(*args,**kw):
+        print('call',f.__name__+'()')
+        return f(*args,**kw)
+    return fn
+
+# 调用方式1
+newFun1(3)
+# 调用方式2
+# 定义fun1()的时候
+@newFun1
+def fun1(x):
+    return x
+#这样得到的fun1就会自己打印名字，原用的fun1呗隐藏起来了
+# 自带的装饰器
+@log # 打印日志
+@performance # 检测性能
+@transaction # 数据库事务
+@post('/register') # URL路由
+
+# 含参的装饰器看上去好复杂的样子，要用的话去看imooc.com/code/6066
+
+# 模块，可以放在不同的包中
+# 包的文件夹底下必须有__init__.py文件，可以为空
+import package.module
+# 只想导入几个函数的话
+from math import pow,sin,log
+from logging import log as logger # 防止冲突的做法
+
+import os
+os.path.isdir()
+os.path.isfile()
+
+# Object Oriented
+# 对象中的值不用事先定义
+class Person:
+    address = ‘Earth’ # 所有实例公用，一个改变个个改变
+    # address可用Person.address访问
+    def __init__(self,name,**kw):
+        self.name=name
+        for k,v in kw.iteritems():
+            setattr(self,k,v)
+p1 = Person("Vera")
+p2 = Person("Sweetie",height='170')
+# 内部属性用双下划线开头，但是不要用双下划线结尾，可以让外部无法访问
+
+pass # 空语句
+
+# 异常处理
+try :
+    print(a.__name)
+except AttributeError:
+    print 'Error'
