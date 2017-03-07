@@ -191,3 +191,18 @@ import types
 def fun(self):
     print(self.name)
 p1.fun = types.MethodType(fun,p1,Person)
+
+# 类方法，通过类调用而不是实例
+@classmethod
+def fun(cls):
+    print(cls.name)
+
+# 继承
+class Student(Person):
+    def __init__(self,args,other):
+        super(Student,self).__init__(args)
+        self.other = other
+
+isinstance(p1,Person) # 判断类型，类型为父类类型时也会返回True
+
+
