@@ -20,7 +20,7 @@ tupleA = ('Michael','Bob',12)
 tupleB = (1,) # 单个元素的tuple的申明方式
 # tuple如果其中一个元素是list，就可以可变！因为list可变
 
-# if,没有结束符号，注意锁进
+# if,没有结束符号，注意缩进
 if flag==True:
     print("true")
 elif flag==False:
@@ -28,7 +28,7 @@ elif flag==False:
 else:
     print("else~")
 print("Out of loop")
-
+	
 # for in
 L = ['Ada','Bob','Candy']
 for name in L:
@@ -42,7 +42,7 @@ print("Out of loop")
 
 # break&continue 照常
 
-# dict 字典，键值对，无序，keyo必须不可变
+# dict 字典，键值对，无序，key必须不可变
 d = {
     'Adam':95,
     'Lisa':85
@@ -180,3 +180,14 @@ try :
     print(a.__name)
 except AttributeError:
     print 'Error'
+
+del p1.name # 删除实例的属性
+# 实例属性优先级高于类属性
+# 调用类属性的时候一定要用类名去调用，不要用实例名
+# 类的函数传入参数第一个都是self，但是不需要显示传入
+
+# 动态绑定函数
+import types
+def fun(self):
+    print(self.name)
+p1.fun = types.MethodType(fun,p1,Person)
