@@ -209,3 +209,7 @@ type(p1) # 返回Type对象，解释它的变量类型
 dir(p1) # 返回字符串列表，包含它的所有函数和变量名
 getattr(p1,'name')
 setattr(p1,'age',12)
+
+__str__() # toString
+__len__()
+__cmp__() # sorted(L),list中的元素必须实现__cmp__方法
