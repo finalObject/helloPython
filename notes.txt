@@ -205,3 +205,7 @@ class Student(Person):
 
 isinstance(p1,Person) # 判断类型，类型为父类类型时也会返回True
 
+type(p1) # 返回Type对象，解释它的变量类型
+dir(p1) # 返回字符串列表，包含它的所有函数和变量名
+getattr(p1,'name')
+setattr(p1,'age',12)
