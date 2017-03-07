@@ -205,4 +205,3 @@ class Student(Person):
 
 isinstance(p1,Person) # 判断类型，类型为父类类型时也会返回True
 
-
