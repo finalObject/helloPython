@@ -109,7 +109,7 @@ a(-1)
 def fun4(x):
     return x*x
 a=[1,2,3]
-b=map(fun4,a) # 将一个函数作用于list中所用的元素，返回一个新的list
+b=list(map(fun4,a)) # 将一个函数作用于list中所用的元素，返回一个新的list
 # b = [1,4,9]
 
 reduce(f,list,a) # f接受两个参数返回一个参数(有a的话，先是a和一号元素开始运算)，list中12元素调用函数，然后返回参数和3号元素调用函数，直到结束
@@ -127,7 +127,7 @@ lambda x: -1 if x<0 else x # 匿名函数里if-else好像有点不一样
 # decorator
 def fun1(x):
     return x*2
-ndef newFun1(f): # 调用newFun1(fun1)返回的函数时，会答应fun1的名字，同时执行fun1
+def newFun1(f): # 调用newFun1(fun1)返回的函数时，会答应fun1的名字，同时执行fun1
     def fn(*args,**kw):
         print('call',f.__name__+'()')
         return f(*args,**kw)
