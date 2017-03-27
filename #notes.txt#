@@ -232,3 +232,12 @@ class Student(object):
         if score < 0 or score > 100:
             raise ValueError('invalid score')
         self.__score = score
+
+## __slots__用来限制这个类产生的实例中可以添加的属性
+class Person(object):
+
+    __slots__ = ('name', 'gender')
+
+    def __init__(self, name, gender):
+        self.name = name
+        self.gender = gender
