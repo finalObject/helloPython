@@ -241,3 +241,5 @@ class Person(object):
     def __init__(self, name, gender):
         self.name = name
         self.gender = gender
+
+## __call__个人感觉意义不大，要用自己百度
