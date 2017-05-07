@@ -244,3 +244,16 @@ class Person(object):
         self.gender = gender
 
 ## __call__个人感觉意义不大，要用自己百度
+
+#传说中的闭包
+def set_passline(passline):
+    def cmp(val):
+        if val >=passline:
+            print('pass');
+        else:
+            print('fail');
+    return cmp
+cmp100 = set_passline(100);
+cmp150 = set_passline(150);
+cmp100(60);#结果通过
+cmp150(90);#结果通过
