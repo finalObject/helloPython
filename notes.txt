@@ -257,3 +257,4 @@ cmp100 = set_passline(100);
 cmp150 = set_passline(150);
 cmp100(60);#结果通过
 cmp150(90);#结果通过
+
