@@ -1,3 +1,4 @@
+
 # 布尔值 True False
 # and or not可以当逻辑运算符
 # 空值为None，不是0
@@ -258,3 +259,29 @@ cmp150 = set_passline(150);
 cmp100(60);#结果通过
 cmp150(90);#结果通过
 
+##文件读取
+f=open('a.txt','r');
+'r','w','a'(append),'r+'\'w+'(read and write),'a+'(append,read,write),'b'(binary)
+f.read()
+f.readline()
+f.write()
+f.writelines()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+f.readlines()
