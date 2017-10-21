@@ -265,7 +265,26 @@ f=open('a.txt','r');
 f.read()
 f.readline()
 f.write()
-f.writelines()
+f.writelines()# in buffer,not into file
+##文件指针移动
+f.seek(x,refer)#x偏移量，refer相对参考位置
+os.SEEK_SET#文件起始位置
+os.SEEK_CUR#文件当前位置
+os.SEEK_END#文件结尾位置
+
+file.fileno()
+file.mode
+file.encoding
+file.closed
+sys.stdin;sys.stdout;sys.stderr
+
+sys.agrv;//list!
+
+a=unicode.encode(u'你好','utf-8')#转成utf8写入文件
+
+#创建指定编码格式的文件 
+f=codecs.open('a.txt','w','utf-8')
+f.encoding
 
 
 
@@ -278,10 +297,3 @@ f.writelines()
 
 
 
-
-
-
-
-
-
-f.readlines()
