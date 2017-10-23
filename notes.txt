@@ -304,6 +304,36 @@ try:
 except FileError as e:
     print(e) 
 
+#正则表达式，regular expression
+import re
+pattern = re.compile('imooc'，re.I)#写上正则表达式
+#re.I 无视大小写
+#这个参数可以省略
+str1 = 'imooc python'#被匹配文本
+result = pattern.match(str1)#匹配
+result2 = re.match('imooc',str1)#不用pattern
+
+result.group()#匹配到的文本
+result.span()#匹配到的始末位置
+result.string#之前的被匹配文本
+result.re#pattern
+
+# . 匹配任意一个字符
+# [abc] 匹配其中一个字 [a-z][a-zA-Z0-9]
+# \w 匹配单词字符[a-zA-Z0-9]
+# \W 匹配非单词字符 
+# \d 匹配数字
+# \D 匹配非数字
+# \s 匹配空白字符
+# \S 匹配非空白字符
+# \ 转义特殊含义字符
+
+#普通字符串匹配
+f=open("a.txt")
+for line in f:
+    if line.startsWith('imooc'):
+        print line 
+
 
 
 
