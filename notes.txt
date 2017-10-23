@@ -286,6 +286,23 @@ a=unicode.encode(u'你好','utf-8')#转成utf8写入文件
 f=codecs.open('a.txt','w','utf-8')
 f.encoding
 
+class FileError(IOError):
+    def __init__(self,info):
+        Exception.__init__(self)
+        self.errorInfo = info
+    def __str__(self):
+        return "FileError:%s" % self.errorInfo
+
+#python2.x
+try:
+    raise FileError,"Test FileError"#python2.x
+except FileError,e:
+    print e 
+#python3
+try:
+    raise FileError("FF")
+except FileError as e:
+    print(e) 
 
 
 
