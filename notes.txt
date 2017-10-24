@@ -311,12 +311,19 @@ pattern = re.compile('imooc'，re.I)#写上正则表达式
 #这个参数可以省略
 str1 = 'imooc python'#被匹配文本
 result = pattern.match(str1)#匹配
-result2 = re.match('imooc',str1)#不用pattern
+result2 = re.match(r'imooc',str1)#不用pattern
 
 result.group()#匹配到的文本
 result.span()#匹配到的始末位置
 result.string#之前的被匹配文本
 result.re#pattern
+
+str1 = 'x=200'
+info = re.search(r'\d+',str1)#match只会从头开始匹配，有时候需要用search 
+info = re.findall(r'\d+',str1)#全部search，返回列表
+
+re.sub(pattern,repl,string,count=0,flag=0)#repl可以是字符串，也可以是以match为参数的函数 
+re.split(pattern,string)#返回listc，pattern表示分隔符，可以或！
 
 # . 匹配任意一个字符
 # [abc] 匹配其中一个字 [a-z][a-zA-Z0-9]
@@ -327,12 +334,52 @@ result.re#pattern
 # \s 匹配空白字符
 # \S 匹配非空白字符
 # \ 转义特殊含义字符
+# * 匹配前一个字符零次或无限次
+# + 匹配前一个字符一次或无限次
+# ? 匹配前一个字符零次或一次 
+# {m} 匹配前一个字符m次 
+# {m}/{m,n} 匹配前一个字符m次或者m-n次
+# *? /+? /?? 尽可能的少匹配字符
+# ^ 匹配字符串开头
+# $ 匹配字符串结尾
+# \Anihao 匹配nihao开头
+# | 匹配左右任意一个表达式
+# () 分组，和|混合使用，实现局部的左右任意匹配
+# \n 引用前面括号里匹配到的内容，第n个括号 
+# (?P<name>safaff)  给分组指定名字
+# (?P=name) 引用指定名字的分组
 
 #普通字符串匹配
 f=open("a.txt")
 for line in f:
     if line.startsWith('imooc'):
         print line 
+
+#python2.x
+import urllib2
+#python3.x
+import urllib.request
+
+#python3!
+#抓去网页图片
+#执行之后都存在根目录，自己注意
+import urllib.request as myUrl
+import re
+
+req = myUrl.urlopen('http://www.imooc.com/course/list')
+buf = req.read()
+
+buf = buf.decode('utf-8')
+#写入文档的时候也需要先decode，不能强制转换
+#buf = str(buf) 不知道为啥，这个不能用
+
+list1 = re.findall(r'//img.*?jpg',buf)
+
+i=0
+for url in list1:
+    url = 'http:'+url
+    myUrl.urlretrieve(url,str(i)+'.jpg')
+    i = i+1
 
 
 
