@@ -1,4 +1,4 @@
-
+        
 # 布尔值 True False
 # and or not可以当逻辑运算符
 # 空值为None，不是0
@@ -380,6 +380,11 @@ for url in list1:
     url = 'http:'+url
     myUrl.urlretrieve(url,str(i)+'.jpg')
     i = i+1
+
+from sympy import *
+x=Symbol('x')
+result = diff(x**2,x)
+num = result.subs(x,1)
 
 
 

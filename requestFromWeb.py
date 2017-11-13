@@ -15,6 +15,6 @@ list1 = re.findall(r'//img.*?jpg',buf)
 
 i=0
 for url in list1:
-	url = 'http:'+url
+	url = 'http:'+url#加入http前缀
 	myUrl.urlretrieve(url,str(i)+'.jpg')
 	i = i+1
