@@ -386,6 +386,60 @@ x=Symbol('x')
 result = diff(x**2,x)
 num = result.subs(x,1)
 
+import numpy as np
+import matplotlib.pyplot as plt
+ 
+plt.figure(1) # 创建图表1
+plt.figure(2) # 创建图表2
+ax1 = plt.subplot(211) # 在图表2中创建子图1
+ax2 = plt.subplot(212) # 在图表2中创建子图2
+ 
+x = np.linspace(0, 3, 100)
+for i in xrange(5):
+    plt.figure(1)  #❶ # 选择图表1
+    plt.plot(x, np.exp(i*x/3))
+    plt.sca(ax1)   #❷ # 选择图表2的子图1
+    plt.plot(x, np.sin(i*x))
+    plt.sca(ax2)  # 选择图表2的子图2
+    plt.plot(x, np.cos(i*x))
+ 
+plt.show()
+
+
+print ("Name:%10s Age:%8d Height:%8.2f"%("Aviad",25,1.83))
+
+
+# 1、显示图片
+import matplotlib.pyplot as plt #plt 用于显示图片
+import matplotlib.image as mpimg #mpimg 用于读取图片
+import numpy as np
+lena = mpimg.imread('lena.png') #读取和代码处于同一目录下的lena.png
+# 此时 lena 就已经是一个 np.array 了，可以对它进行任意处理
+lena.shape #(512, 512, 3)
+plt.imshow(lena) # 显示图片
+plt.axis('off') # 不显示坐标轴
+plt.show()
+# 2、显示图片的第一个通道
+lena_1 = lena[:,:,0]
+plt.imshow('lena_1')
+plt.show()
+
+# 此时会发现显示的是热量图，不是我们预想的灰度图，可以添加 cmap 参数，有如下几种添加方法：
+#方法一
+plt.imshow('lena_1', cmap='Greys_r')
+plt.show()
+
+#方法二
+img = plt.imshow('lena_1')
+img.set_cmap('gray') # 'hot' 是热量图
+plt.show()
+
+#pygame
+pygame.event.set_block()
+
+#generate an image of fonts
+my_font = pygame.font.SysFont("arial", 64)
+name_surface = my_font.render(my_name, True, (0, 0, 0), (255, 255, 255))
 
 
 
